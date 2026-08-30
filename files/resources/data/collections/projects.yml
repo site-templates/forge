@@ -1,0 +1,8 @@
+# Column types for projects.json. Projects link out, so there is no
+# per-project page — `url` is the destination.
+fields:
+    year: { type: text }
+    title: { type: text }
+    note: { type: text }
+    description: { type: textarea }
+    url: { type: url }

@@ -1,0 +1,21 @@
+# The visual editor's contract for sections/not-found.blade.php.
+title: Not found
+description: The 404 page
+fields:
+    heading:
+        type: text
+        label: Heading
+        default: "This page does not exist"
+    body:
+        type: textarea
+        label: Body
+        rows: 3
+        default: "The link may be old, or I may have moved something. The writing and the work are both still where you would expect."
+    linkText:
+        type: text
+        label: Link text
+        default: "Back to the beginning"
+    link:
+        type: url
+        label: Link
+        default: "/"

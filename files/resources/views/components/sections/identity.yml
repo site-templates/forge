@@ -1,0 +1,20 @@
+# The visual editor's contract for sections/identity.blade.php.
+title: Identity
+description: Name, role, and the availability line
+fields:
+    name:
+        type: text
+        label: Name
+        default: "Ezra Vance"
+    role:
+        type: text
+        label: Role
+        default: "Design engineer"
+    showStatus:
+        type: toggle
+        label: Show availability line
+        default: "1"
+    status:
+        type: text
+        label: Availability
+        default: "Available for new work from October"

@@ -1,0 +1,18 @@
+# The visual editor's contract for footer.blade.php — one line of credit and
+# the way back to the top.
+title: Footer
+description: Credit line, colophon, and the back-to-top link
+fields:
+    copyright:
+        type: text
+        label: Credit line
+        default: "© 2026 Ezra Vance"
+    colophon:
+        type: text
+        label: Colophon
+        description: The small second line. Leave empty to hide.
+        default: "Set in Spectral and Inter. Built by hand."
+    topLabel:
+        type: text
+        label: Back-to-top label
+        default: "Back to top"

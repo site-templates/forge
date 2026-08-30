@@ -1,0 +1,43 @@
+# The visual editor's contract for sections/index-list.blade.php.
+# Rows come from whichever collection the page binds to this instance —
+# projects, ventures or experience — so the storage target follows the tag.
+title: Index list
+description: The three-column ledger — year, title, and what it was
+fields:
+    label:
+        type: text
+        label: Section label
+        default: "Selected projects"
+    gutter:
+        type: select
+        label: Left column width
+        description: Wide when the left column holds a date range rather than a single year.
+        default: "narrow"
+        options:
+            narrow: Narrow
+            wide: Wide
+    items:
+        type: repeater
+        label: Rows
+        add_button_label: "Add row"
+        item_label: title
+        sub_fields:
+            year:
+                type: text
+                label: Year
+                description: The left column. Leave empty to continue the year above.
+                default: ""
+            title:
+                type: text
+                label: Title
+                default: "New row"
+            note:
+                type: text
+                label: Note
+                description: The right-hand column — what it was, or the role.
+                default: ""
+            url:
+                type: url
+                label: Link
+                description: Leave empty and the row renders as plain text.
+                default: ""

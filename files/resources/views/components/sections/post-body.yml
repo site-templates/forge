@@ -1,0 +1,10 @@
+# The visual editor's contract for sections/post-body.blade.php.
+title: Essay body
+description: The essay text, styled by the prose rules
+fields:
+    body:
+        type: textarea
+        label: Body
+        description: Filled from the essay's own body in the writings collection, where it opens in the rich editor.
+        rows: 12
+        default: ""

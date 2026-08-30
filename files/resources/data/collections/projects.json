@@ -1,0 +1,44 @@
+[
+    {
+        "year": "2026",
+        "title": "Aster",
+        "note": "Product design, Front-end",
+        "description": "A calendar for people who schedule other people. I designed and built the week view, the conflict resolver, and the keyboard layer.",
+        "url": "https://example.com/aster"
+    },
+    {
+        "year": "2026",
+        "title": "Halyard",
+        "note": "Design system, Docs",
+        "description": "A 140-component design system for a payments company, and the documentation site that made anyone actually use it.",
+        "url": "https://example.com/halyard"
+    },
+    {
+        "year": "2025",
+        "title": "Field Notes",
+        "note": "Plugin, TypeScript",
+        "description": "A Figma plugin that pulls real production copy into designs, so nobody ships a screen full of placeholder text again.",
+        "url": "https://example.com/field-notes"
+    },
+    {
+        "year": "2025",
+        "title": "Northbound",
+        "note": "Identity, Web",
+        "description": "Identity and site for a small expedition outfit in Tromsø. Six pages, one typeface, no stock photography.",
+        "url": "https://example.com/northbound"
+    },
+    {
+        "year": "2024",
+        "title": "Tessera",
+        "note": "Open source",
+        "description": "A headless data table for React that handles a hundred thousand rows without a virtual scroller. Around 4k stars, and still my most-used thing.",
+        "url": "https://example.com/tessera"
+    },
+    {
+        "year": "2023",
+        "title": "Passage",
+        "note": "Product design, iOS",
+        "description": "A reading app built around one idea: never show a list of things you have not read yet.",
+        "url": "https://example.com/passage"
+    }
+]

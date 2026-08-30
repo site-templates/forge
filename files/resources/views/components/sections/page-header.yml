@@ -1,0 +1,14 @@
+# The visual editor's contract for sections/page-header.blade.php.
+title: Page header
+description: The interior-page opener — heading and an optional line of context
+fields:
+    heading:
+        type: text
+        label: Heading
+        default: "Writing"
+    body:
+        type: textarea
+        label: Supporting copy
+        description: Leave empty to hide.
+        rows: 3
+        default: ""

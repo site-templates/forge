@@ -1,0 +1,4 @@
+# Column types for now.json — the term/detail pairs on the Now page.
+fields:
+    title: { type: text }
+    description: { type: textarea }

@@ -1,0 +1,31 @@
+# The visual editor's contract for sections/post-header.blade.php. The essay
+# page fills these from the matched entry of the writings collection.
+title: Essay header
+description: Back link, date, title, and standfirst
+fields:
+    backText:
+        type: text
+        label: Back link text
+        default: "Writing"
+    backLink:
+        type: url
+        label: Back link
+        default: "/writing"
+    date:
+        type: text
+        label: Date
+        default: ""
+    readTime:
+        type: text
+        label: Reading time
+        description: Leave empty to hide.
+        default: ""
+    title:
+        type: text
+        label: Title
+        default: "An essay"
+    description:
+        type: textarea
+        label: Standfirst
+        rows: 3
+        default: ""

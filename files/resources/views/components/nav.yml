@@ -1,0 +1,35 @@
+# The visual editor's contract for nav.blade.php — these fields surface under
+# the Layout tab. The links live in resources/data/site.json (nav_links), so
+# editing one here changes every page at once.
+title: Header
+description: The portrait that goes home, and the site links
+fields:
+    avatar:
+        type: image
+        label: Portrait
+        description: Also used as the browser tab icon — replace public/favicon.png to match.
+        default: "/images/avatar.jpg"
+    avatarAlt:
+        type: text
+        label: Portrait description
+        default: "Ezra Vance"
+    current:
+        type: text
+        label: Current page path
+        description: Set by each page — the matching link gets the underline.
+        default: "/"
+    links:
+        type: repeater
+        label: Navigation links
+        add_button_label: "Add link"
+        item_label: text
+        source: site.nav_links
+        sub_fields:
+            text:
+                type: text
+                label: Label
+                default: "New link"
+            url:
+                type: url
+                label: Link
+                default: "/"

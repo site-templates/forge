@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Building",
+        "description": "The keyboard layer for Aster — every action reachable without a pointer, which is harder than it sounds once dragging is involved."
+    },
+    {
+        "title": "Writing",
+        "description": "A longer piece on dark-mode colour systems, which has been three weeks from finished for about two months."
+    },
+    {
+        "title": "Learning",
+        "description": "Enough WebGPU to know whether it is the right tool for a thing I keep almost starting."
+    },
+    {
+        "title": "Reading",
+        "description": "Christopher Alexander's Notes on the Synthesis of Form, slowly, for the second time."
+    },
+    {
+        "title": "Away from the desk",
+        "description": "Running the coast road most mornings, and failing to keep a sourdough starter alive for a fourth time."
+    }
+]

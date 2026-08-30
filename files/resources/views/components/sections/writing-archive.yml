@@ -1,0 +1,45 @@
+# The visual editor's contract for sections/writing-archive.blade.php.
+title: Writing archive
+description: Every essay, with the year in the left gutter
+fields:
+    writings:
+        type: repeater
+        label: Essays
+        add_button_label: "Add essay"
+        item_label: title
+        source: writings
+        sub_fields:
+            title:
+                type: text
+                label: Title
+                default: "New essay"
+            slug:
+                type: text
+                label: URL slug
+                default: "new-essay"
+            link:
+                type: url
+                label: Page link
+                default: "/writing/new-essay"
+            description:
+                type: textarea
+                label: Summary
+                rows: 3
+                default: ""
+            dateFormatted:
+                type: text
+                label: Date
+                default: ""
+            yearLabel:
+                type: text
+                label: Year heading
+                description: Set on the first essay of a year; leave empty on the rest.
+                default: ""
+            readTime:
+                type: text
+                label: Reading time
+                default: "4 min read"
+            content:
+                type: richtext
+                label: Body
+                default: ""

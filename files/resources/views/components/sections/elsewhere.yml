@@ -1,0 +1,29 @@
+# The visual editor's contract for sections/elsewhere.blade.php.
+# The rows live in resources/data/site.json (elsewhere) — edit once, every
+# page that shows them follows.
+title: Elsewhere
+description: Email and profiles, as a labelled list
+fields:
+    label:
+        type: text
+        label: Section label
+        default: "Elsewhere"
+    links:
+        type: repeater
+        label: Links
+        add_button_label: "Add link"
+        item_label: handle
+        source: site.elsewhere
+        sub_fields:
+            label:
+                type: text
+                label: Where
+                default: "Website"
+            handle:
+                type: text
+                label: Handle
+                default: "example.com"
+            url:
+                type: url
+                label: Link
+                default: "https://example.com"

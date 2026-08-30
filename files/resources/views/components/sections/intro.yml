@@ -1,0 +1,10 @@
+# The visual editor's contract for sections/intro.blade.php.
+title: Introduction
+description: The opening paragraphs, in rich text
+fields:
+    body:
+        type: textarea
+        label: Body
+        description: HTML — wrap each paragraph in <p>…</p>.
+        rows: 12
+        default: "<p>Hello. I design and build interfaces, mostly for small teams shipping software people use every day.</p>"

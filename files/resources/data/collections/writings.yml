@@ -1,0 +1,12 @@
+# Column types for writings.json — the source of truth the builder reads.
+# `content` opens in the rich editor, in the Content drawer and in any
+# section repeater that lists this collection.
+fields:
+    title: { type: text }
+    slug: { type: text }
+    description: { type: textarea }
+    dateFormatted: { type: text }
+    yearLabel: { type: text }
+    readTime: { type: text }
+    link: { type: url }
+    content: { type: richtext }

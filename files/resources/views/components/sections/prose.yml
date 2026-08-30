@@ -1,0 +1,23 @@
+# The visual editor's contract for sections/prose.blade.php.
+title: Text block
+description: Rich text at reading width, with an optional section label
+fields:
+    label:
+        type: text
+        label: Section label
+        description: Leave empty to hide.
+        default: ""
+    spacing:
+        type: select
+        label: Space above
+        description: Tight when this block opens a page, standard when it sits partway down one.
+        default: "standard"
+        options:
+            standard: Standard
+            tight: Tight
+    body:
+        type: textarea
+        label: Body
+        description: HTML — wrap each paragraph in <p>…</p>.
+        rows: 12
+        default: "<p>A paragraph.</p>"

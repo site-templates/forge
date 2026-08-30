@@ -1,0 +1,33 @@
+# The visual editor's contract for sections/project-list.blade.php.
+title: Project list
+description: The projects page — year, title, what it was, and a line of detail
+fields:
+    projects:
+        type: repeater
+        label: Projects
+        add_button_label: "Add project"
+        item_label: title
+        source: projects
+        sub_fields:
+            year:
+                type: text
+                label: Year
+                default: ""
+            title:
+                type: text
+                label: Title
+                default: "New project"
+            note:
+                type: text
+                label: Note
+                description: The right-hand column — what you did on it.
+                default: ""
+            description:
+                type: textarea
+                label: Description
+                rows: 3
+                default: ""
+            url:
+                type: url
+                label: Link
+                default: ""

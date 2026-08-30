@@ -1,0 +1,7 @@
+# Column types for ventures.json — the small things you run yourself.
+# Same four-column ledger shape as projects and experience.
+fields:
+    year: { type: text }
+    title: { type: text }
+    note: { type: text }
+    url: { type: url }

@@ -1,0 +1,264 @@
+/*
+    Forge — the whole design system, in one file.
+
+    Every colour and font this template uses is declared once, here, in the
+    @theme block. Section markup never writes a raw hex or a bg-zinc-* class:
+    it writes bg-canvas, text-ink, text-muted, border-line, font-display. Retune
+    a token below and the entire site follows.
+*/
+
+@theme {
+    /*
+        Warm charcoal, not cold grey. The canvas has a little iron in it, which
+        is the only place the name shows up — there is no ember accent, because
+        a hot colour on near-black is the first thing everyone reaches for.
+    */
+    --color-canvas: #0b0b0a;
+    --color-surface: #161513;
+
+    /*
+        Three text tiers do all the work of hierarchy. Every one of them clears
+        WCAG AA on both canvas and surface: 16.4:1, 8.1:1, 5.3:1.
+    */
+    --color-ink: #edeae3;
+    --color-muted: #aba59b;
+    --color-faint: #8a8379;
+
+    --color-line: #262320;
+
+    /* The accent is the light itself — emphasis is luminance, never hue. */
+    --color-accent: #f7f4ee;
+    --color-accent-ink: #0b0b0a;
+
+    /* The single chromatic note on the site: the availability dot. */
+    --color-signal: #86a97b;
+
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    --font-display: 'Spectral', Georgia, 'Times New Roman', serif;
+
+    /* One easing for everything that moves: quick out, long soft settle. */
+    --ease-glide: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+    background-color: var(--color-canvas);
+    color-scheme: dark;
+    scrollbar-color: var(--color-line) transparent;
+}
+
+/* One stray wide element must never give the whole page a sideways scroll. */
+body {
+    overflow-x: clip;
+}
+
+::selection {
+    background-color: var(--color-ink);
+    color: var(--color-canvas);
+}
+
+/* A crisp ring instead of the browser's default halo. Keyboard users only. */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+/*
+    ── The glide ──────────────────────────────────────────────────────────────
+
+    Forge's signature: one soft block that slides between the rows of a list as
+    the pointer moves, instead of each row lighting up on its own. public/js/main.js
+    measures the hovered row and writes the four variables below; the block does
+    the rest. It fades in on enter and out on leave, so it never animates in from
+    the corner of the list.
+
+    Any container marked data-glide gets one, and every direct child marked
+    data-glide-item is a target. Works on the nav and on every index list.
+*/
+.glide-track {
+    position: relative;
+}
+
+.glide-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--glide-w, 0);
+    height: var(--glide-h, 0);
+    translate: var(--glide-x, 0) var(--glide-y, 0);
+    border-radius: 8px;
+    background-color: var(--color-surface);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    transition:
+        translate 0.24s var(--ease-glide),
+        width 0.24s var(--ease-glide),
+        height 0.24s var(--ease-glide),
+        opacity 0.18s ease;
+}
+
+.glide-track[data-glide-active] .glide-block {
+    opacity: 1;
+}
+
+/* The rows have to sit above the block they are being highlighted by. */
+.glide-track [data-glide-item] {
+    position: relative;
+    z-index: 1;
+}
+
+/*
+    Reduced motion: the block still appears, it just stops travelling. Content
+    is never hidden or held back by motion anywhere on this site — Forge ships
+    no scroll reveals at all.
+*/
+@media (prefers-reduced-motion: reduce) {
+    .glide-block {
+        transition: opacity 0.18s ease;
+    }
+
+    .arrow-nudge {
+        transition: none;
+    }
+}
+
+/* The ↗ on an outbound row, nudged along its own diagonal on hover. */
+.arrow-nudge {
+    transition: translate 0.2s var(--ease-glide);
+}
+
+.group:hover .arrow-nudge {
+    translate: 0.125rem -0.125rem;
+}
+
+/*
+    ── Prose ──────────────────────────────────────────────────────────────────
+
+    Essay bodies arrive as HTML from the collection's `content` field, so their
+    elements can't take Tailwind classes. Everything an entry might contain is
+    styled here. Width is set in the markup with max-w-[65ch], never in here.
+*/
+.prose {
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.prose > * + * {
+    margin-top: 1.5em;
+}
+
+.prose h2,
+.prose h3 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.prose h2 {
+    margin-top: 2.4em;
+    font-size: 1.375rem;
+    line-height: 1.4;
+}
+
+.prose h3 {
+    margin-top: 2em;
+    font-size: 1.125rem;
+    line-height: 1.45;
+}
+
+.prose a {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-faint);
+}
+
+.prose a:hover {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+}
+
+.prose strong {
+    color: var(--color-ink);
+    font-weight: 600;
+}
+
+.prose em {
+    font-style: italic;
+}
+
+.prose ul,
+.prose ol {
+    padding-left: 1.3em;
+}
+
+.prose ul {
+    list-style: disc;
+}
+
+.prose ol {
+    list-style: decimal;
+}
+
+.prose li {
+    margin-top: 0.5em;
+    padding-left: 0.3em;
+}
+
+.prose li::marker {
+    color: var(--color-faint);
+}
+
+.prose blockquote {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-left: 1.4em;
+    border-left: 1px solid var(--color-line);
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: var(--color-ink);
+}
+
+.prose code {
+    background-color: var(--color-surface);
+    border-radius: 4px;
+    padding: 0.15em 0.4em;
+    font-size: 0.875em;
+    color: var(--color-ink);
+}
+
+.prose pre {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    padding: 1.1em 1.25em;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+
+.prose pre code {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    font-size: inherit;
+}
+
+.prose img {
+    border-radius: 8px;
+    outline: 1px solid var(--color-line);
+    outline-offset: -1px;
+    width: 100%;
+}
+
+.prose hr {
+    margin-top: 2.6em;
+    margin-bottom: 2.6em;
+    border-color: var(--color-line);
+}

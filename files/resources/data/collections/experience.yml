@@ -1,0 +1,8 @@
+# Column types for experience.json — one row per role, newest first.
+# `year` is the period, `title` the company, `note` the role. Leave `url`
+# empty and the row renders as plain text instead of a link.
+fields:
+    year: { type: text }
+    title: { type: text }
+    note: { type: text }
+    url: { type: url }

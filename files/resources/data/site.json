@@ -1,0 +1,16 @@
+{
+    "name": "Ezra Vance",
+    "nav_links": [
+        { "text": "Home", "url": "/" },
+        { "text": "Writing", "url": "/writing" },
+        { "text": "Projects", "url": "/projects" },
+        { "text": "About", "url": "/about" },
+        { "text": "Now", "url": "/now" }
+    ],
+    "elsewhere": [
+        { "label": "Email", "handle": "hello@ezravance.com", "url": "mailto:hello@ezravance.com" },
+        { "label": "GitHub", "handle": "ezravance", "url": "https://github.com" },
+        { "label": "X", "handle": "@ezravance", "url": "https://x.com" },
+        { "label": "Read.cv", "handle": "ezravance", "url": "https://read.cv" }
+    ]
+}

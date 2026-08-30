@@ -1,0 +1,26 @@
+[
+    {
+        "year": "",
+        "title": "Quiet Type",
+        "note": "A monthly letter on typography",
+        "url": "https://example.com/quiet-type"
+    },
+    {
+        "year": "",
+        "title": "Grain",
+        "note": "Noise and paper textures for the web",
+        "url": "https://example.com/grain"
+    },
+    {
+        "year": "",
+        "title": "Postscript",
+        "note": "A very small RSS reader",
+        "url": "https://example.com/postscript"
+    },
+    {
+        "year": "",
+        "title": "Hairline",
+        "note": "One-pixel borders that survive scaling",
+        "url": "https://example.com/hairline"
+    }
+]

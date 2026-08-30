@@ -1,0 +1,26 @@
+# The visual editor's contract for sections/subscribe.blade.php.
+title: Subscribe
+description: A single-row email form for new essays
+fields:
+    label:
+        type: text
+        label: Section label
+        default: "Subscribe"
+    body:
+        type: textarea
+        label: Supporting copy
+        rows: 2
+        default: "New essays, roughly monthly. No other mail, ever."
+    placeholder:
+        type: text
+        label: Field placeholder
+        default: "you@example.com"
+    buttonText:
+        type: text
+        label: Button text
+        default: "Subscribe"
+    action:
+        type: url
+        label: Form endpoint
+        description: Where the address is posted — your list provider's form URL.
+        default: "https://example.com/subscribe"

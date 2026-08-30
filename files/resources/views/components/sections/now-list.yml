@@ -1,0 +1,20 @@
+# The visual editor's contract for sections/now-list.blade.php.
+title: Now list
+description: Term and detail pairs — what you are doing at the moment
+fields:
+    items:
+        type: repeater
+        label: Entries
+        add_button_label: "Add entry"
+        item_label: title
+        source: now
+        sub_fields:
+            title:
+                type: text
+                label: Term
+                default: "Building"
+            description:
+                type: textarea
+                label: Detail
+                rows: 3
+                default: ""
