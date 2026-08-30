@@ -4,7 +4,7 @@
     "description": "A dead-simple personal site on warm charcoal — a three-column index of work and writing, a hover indicator that glides between rows, and serif essays at reading width.",
     "icon": "🖤",
     "repo": "https://github.com/site-templates/forge",
-    "order": 36,
+    "order": 34,
     "category": "blog",
     "theme": "dark",
     "accent": "#F7F4EE",
