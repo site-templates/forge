@@ -65,7 +65,10 @@ Sections are `mt-20 sm:mt-24` apart; the first section after the header is
 Rows are `px-3 py-2.5` (ledger) or `px-3 py-4` (rows with a description), on a
 `-mx-3` track so the text still aligns with the column edge. Radius is `8px`
 (`rounded-lg`) on the glide block, rows, inputs and buttons; `12px` and above
-belongs to a different template.
+belongs to a different template. The one exception is the portrait, which is a
+full circle — it is the only round thing on the site and the only photograph,
+and those two facts belong together. The favicon is the same portrait, masked
+to the same circle.
 
 No shadows anywhere. Depth is a hairline or nothing.
 
@@ -80,8 +83,10 @@ No shadows anywhere. Depth is a hairline or nothing.
   keeping.
 - **Rows link, cards do not exist.** There is not a single card in this
   template. If something needs separating, use whitespace, then a hairline.
-- **Icons are Heroicons micro (16px)** at `size-4 h-lh shrink-0`, filled with
-  `fill-faint` and lifting to `fill-accent` inside a hovered row. The only two
+- **Icons are Heroicons micro (16px)** at `size-4 shrink-0`, filled with
+  `fill-faint` and lifting to `fill-accent` inside a hovered row, in an
+  `inline-flex items-center gap-x-1` group. Never `h-lh` — it puts the icon's
+  bottom on the text baseline and the arrow reads as superscript. The only two
   in the template are arrow-up-right and arrow-left.
 
 ## Motion

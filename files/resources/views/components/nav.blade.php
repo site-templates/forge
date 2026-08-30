@@ -8,7 +8,7 @@
 <header id="top" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-4">
 
     <a href="/" aria-label="Homepage" class="shrink-0">
-        <img src="{{ $avatar }}" alt="{{ $avatarAlt }}" width="80" height="80" class="size-11 rounded-lg object-cover sm:size-10 outline-1 -outline-offset-1 outline-line hover:outline-faint">
+        <img src="{{ $avatar }}" alt="{{ $avatarAlt }}" width="80" height="80" class="size-11 rounded-full object-cover sm:size-10 outline-1 -outline-offset-1 outline-line hover:outline-faint">
     </a>
 
     <nav data-glide class="-mx-2 flex flex-wrap items-center" aria-label="Main">
