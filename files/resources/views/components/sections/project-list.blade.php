@@ -6,7 +6,7 @@
     <ul role="list" data-glide class="-mx-3">
         @foreach ($projects as $project)
         <li>
-            <a href="{{ $project->url }}" data-glide-item class="group grid gap-x-5 rounded-lg px-3 py-4 sm:grid-cols-[4.5rem_1fr] sm:items-baseline">
+            <a href="{{ $project->url }}" target="_blank" rel="noopener" data-glide-item class="group grid gap-x-5 rounded-lg px-3 py-4 sm:grid-cols-[4.5rem_1fr] sm:items-baseline">
                 <span class="text-base tabular-nums text-faint max-sm:hidden sm:text-sm">{{ $project->year }}</span>
                 <span>
                     <span class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">

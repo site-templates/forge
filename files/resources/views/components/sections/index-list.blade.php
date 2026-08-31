@@ -15,7 +15,7 @@
         @foreach ($items as $item)
         <li>
             @if ($item->url)
-            <a href="{{ $item->url }}" data-glide-item class="group grid gap-x-5 rounded-lg px-3 py-2.5 sm:grid-cols-[var(--forge-gutter)_1fr_auto] sm:items-baseline">
+            <a href="{{ $item->url }}" target="_blank" rel="noopener" data-glide-item class="group grid gap-x-5 rounded-lg px-3 py-2.5 sm:grid-cols-[var(--forge-gutter)_1fr_auto] sm:items-baseline">
                 <span class="text-base tabular-nums text-faint max-sm:hidden sm:text-sm">{{ $item->year }}</span>
                 <span class="inline-flex items-center gap-x-1 text-base text-ink group-hover:text-accent sm:text-[0.9375rem]">
                     {{ $item->title }}

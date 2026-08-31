@@ -9,7 +9,7 @@
     <ul role="list" data-glide class="mt-5 -mx-3">
         @foreach ($links as $link)
         <li>
-            <a href="{{ $link->url }}" data-glide-item class="group grid gap-x-5 rounded-lg px-3 py-2.5 sm:grid-cols-[4.5rem_1fr] sm:items-baseline">
+            <a href="{{ $link->url }}" target="_blank" rel="noopener" data-glide-item class="group grid gap-x-5 rounded-lg px-3 py-2.5 sm:grid-cols-[4.5rem_1fr] sm:items-baseline">
                 <span class="text-base text-faint max-sm:hidden sm:text-sm">{{ $link->label }}</span>
                 <span class="inline-flex items-center gap-x-1 text-base text-ink group-hover:text-accent sm:text-[0.9375rem]">
                     {{ $link->handle }}
