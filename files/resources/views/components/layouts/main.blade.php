@@ -25,7 +25,7 @@
     <!-- The site's only script: the block that follows your pointer down a list. -->
     <script src="/js/main.js" defer></script>
 </head>
-<body class="min-h-dvh bg-canvas font-sans text-ink antialiased">
+<body class="min-h-dvh bg-canvas font-sans text-ink antialiased" data-instant-navigation>
 
     <div class="isolate mx-auto w-full max-w-[40rem] px-6 pt-10 pb-24 sm:pt-14 sm:pb-32">
 

@@ -8,9 +8,19 @@
 
     Mark a container data-glide and its rows data-glide-item. Works for the nav
     and for every index list.
+
+    Pages change in place: instant navigation swaps <main> and keeps the nav,
+    so the nav's block lives for the whole visit while each new <main> gets
+    its lists attached through setUp(root); the lists that left with the old
+    <main> are forgotten, and the nav's block re-measures its row once the
+    current link has moved.
 */
 (function () {
     'use strict';
+
+    /* Every attached list, so a resize can re-measure them all and a page
+       change can let go of the ones that left with the previous <main>. */
+    var tracks = [];
 
     function attach(track) {
         var block = document.createElement('div');
@@ -61,23 +71,45 @@
             if (!track.contains(event.relatedTarget)) clear();
         });
 
-        /*
-            A resize changes every measurement. Re-measure the row still under
-            the pointer rather than leaving the block stranded at its old size.
-        */
-        window.addEventListener('resize', function () {
-            if (current) moveTo(current);
+        tracks.push({
+            track: track,
+            /*
+                A resize, or a page change that restyles the row under the
+                pointer, changes the measurements. Re-measure the row still
+                under the pointer rather than leaving the block stranded.
+            */
+            refresh: function () {
+                if (current) moveTo(current);
+            }
         });
     }
 
-    function init() {
-        var tracks = document.querySelectorAll('[data-glide]');
-        for (var i = 0; i < tracks.length; i++) attach(tracks[i]);
+    function refreshAll() {
+        for (var i = 0; i < tracks.length; i++) tracks[i].refresh();
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
+    window.addEventListener('resize', refreshAll);
+
+    /*
+        Everything inside `root` — the document on first load, the freshly
+        swapped <main> after a navigation. Lists that already have a block
+        (the persistent nav) are left alone.
+    */
+    function setUp(root) {
+        tracks = tracks.filter(function (entry) {
+            return document.contains(entry.track);
+        });
+
+        var found = root.querySelectorAll('[data-glide]');
+        for (var i = 0; i < found.length; i++) {
+            if (!found[i].classList.contains('glide-track')) attach(found[i]);
+        }
     }
+
+    setUp(document);
+
+    document.addEventListener('instant:navigated', function (event) {
+        setUp(event.detail.main);
+        refreshAll();
+    });
 })();
